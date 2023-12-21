@@ -1,0 +1,22 @@
+DELETE:-
+Invoke-RestMethod -Uri http://127.0.0.1:8888/data.txt -Method DELETE
+
+200:-
+Invoke-WebRequest -Uri http://127.0.0.1:8888/index.html
+
+GET:-(200)
+Invoke-WebRequest -Uri http://127.0.0.1:8888/
+
+POST:-(200)
+Invoke-WebRequest -Uri http://127.0.0.1:8888/submit -Method POST -Body "name=Nikhil&mis=112103072"
+
+404(NOT FOUND):-
+Invoke-WebRequest -Uri http://127.0.0.1:8888/nonexistent -Method GET
+
+400(Bad Request):-
+Invoke-WebRequest -Uri http://127.0.0.1:8888/submit -Method POST -Body "name=Nikhil&mis="
+
+
+
+501 (Not implemented):-
+Invoke-WebRequest -Uri http://127.0.0.1:8888/unsupported -Method PUT

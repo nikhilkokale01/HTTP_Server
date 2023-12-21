@@ -1,0 +1,1 @@
+If i use put then it is 501 not implemented and when i use get then it is 404 not understand
